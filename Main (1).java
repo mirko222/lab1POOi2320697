@@ -11,10 +11,10 @@ public class Main
 	    
 	    
 		System.out.println("ingrese un numero:");
-		nuemro = leer.nextint()
+		nuemro = leer.nextInt();
 		
 		if(numero>0 && numero%2 != 0){
-		  System.out.println("true")
+		  System.out.println("true");
 		 
 		}
  
