@@ -1,0 +1,40 @@
+/******************************************************************************
+
+18.Escribe un programa que muestre por pantalla todos los números enteros positivos menores a
+uno leído por teclado que no sean divisibles entre otro también leído de igual forma.
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        // Declaración de variables
+        int limite, divisor;
+
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner s = new Scanner(System.in);
+
+        // Solicitar al usuario ingresar el límite y el divisor
+        System.out.print("Ingrese el límite (número entero positivo): ");
+        limite = s.nextInt();
+
+        System.out.print("Ingrese el divisor (número entero positivo distinto de 0): ");
+        divisor = s.nextInt();
+
+        // Validar que el divisor sea válido (distinto de 0)
+        if (divisor == 0) {
+            System.out.println("El divisor no puede ser igual a 0. Programa finalizado.");
+        } else {
+            // Mostrar los números no divisibles por el divisor
+            System.out.println("Números enteros positivos menores a " + limite + " que no son divisibles por " + divisor + ":");
+            for (int i = 1; i < limite; i++) {
+                if (i % divisor != 0) {
+                    System.out.print(i + " ");
+                }
+            }
+        }
+
+        
+        s.close();
+    }
+}
