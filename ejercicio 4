@@ -1,0 +1,17 @@
+/******************************************************************************
+
+4.Realiza un conversor de soles a euros. 
+La cantidad en soles que se quiere convertir deberá estar
+almacenada en una variable.
+
+*******************************************************************************/
+public class Main
+{
+	public static void main(String[] args) {
+	    double soles = 2002.0; // el monto que queremos convertir a euros 
+	    double valorConv = 0.25; // 1 sol equivale a 0.25 euros
+	    
+	    double euros = soles*valorConv;
+		System.out.println(soles + " equivalen a " + euros +" euros.");
+	}
+}
