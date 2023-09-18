@@ -1,0 +1,40 @@
+/******************************************************************************
+
+9.Escribe un programa que calcule el salario semanal de un trabajador teniendo en cuenta que las
+horas ordinarias (40 primeras horas de trabajo) se pagan a 12 soles la hora. A partir de la hora
+41, se pagan a 16 soles la hora
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de variables
+        int horasTrabajadas;
+        double salarioSemanal;
+
+        // Tarifas por hora
+        double tarifaHoraNormal = 12.0;
+        double tarifaHoraExtra = 16.0;
+
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner s = new Scanner(System.in);
+
+        System.out.print("Ingrese las horas trabajadas en la semana: ");
+        horasTrabajadas = s.nextInt();
+
+        s.close();
+
+        // Calcular el salario semanal
+        if (horasTrabajadas <= 40) {
+            salarioSemanal = horasTrabajadas * tarifaHoraNormal;
+        } else {
+            int horasNormales = 40;
+            int horasExtras = horasTrabajadas - 40;
+            salarioSemanal = (horasNormales * tarifaHoraNormal) + (horasExtras * tarifaHoraExtra);
+        }
+
+        // Mostrar el salario semanal por pantalla
+        System.out.println("El salario semanal del trabajador es: " + salarioSemanal + " soles");
+    }
+}
