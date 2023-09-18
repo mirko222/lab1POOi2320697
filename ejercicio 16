@@ -1,0 +1,36 @@
+/******************************************************************************
+
+16. Escribe un programa que lea una lista de diez números y determine cuántos son positivos, y
+cuántos son negativos
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de variables
+        int numero, positivos = 0, negativos = 0;
+
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner s = new Scanner(System.in);
+
+        // Leer diez números y contar positivos y negativos
+        for (int i = 1; i <= 10; i++) {
+            System.out.print("Ingrese el número " + i + ": ");
+            numero = s.nextInt();
+
+            if (numero > 0) {
+                positivos++;
+            } else if (numero < 0) {
+                negativos++;
+            }
+        }
+
+        // Cerrar el objeto Scanner
+        s.close();
+
+        // Mostrar los resultados por pantalla
+        System.out.println("Cantidad de números positivos: " + positivos);
+        System.out.println("Cantidad de números negativos: " + negativos);
+    }
+}
