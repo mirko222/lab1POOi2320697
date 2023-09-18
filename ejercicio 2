@@ -1,0 +1,19 @@
+/******************************************************************************
+
+2.Crea las variables nombre, dirección y teléfono y asígnale los valores correspondientes. 
+Muestra
+los valores de esas variables por pantalla. 
+*******************************************************************************/
+public class Main
+{
+	public static void main(String[] args) {
+	    //Declaración de variables
+	    String nombre = "Juan Diaz";
+	    String direccion = "Rosales, 123";
+	    String telefono = "51015-6387";
+		System.out.println("Nombre: "+ nombre);
+		System.out.println("Direccio: "+ direccion);
+		System.out.println("Telefon: "+ telefono);
+	}
+}
+
