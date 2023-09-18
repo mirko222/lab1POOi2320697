@@ -1,0 +1,48 @@
+/******************************************************************************
+
+15. Realiza el control de acceso a una caja fuerte. La combinación será un número de 4 cifras. El
+programa nos pedirá la combinación para abrirla. Si no acertamos, se nos mostrará el mensaje
+“Lo siento, esa no es la combinación” y si acertamos se nos dirá “La caja fuerte se ha abierto
+satisfactoriamente”. Tendremos cuatro oportunidades para abrir la caja fuerte
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de la combinación de la caja fuerte
+        final String combinacionCorrecta = "1234";
+
+        // Declaración de variables
+        String intento; 
+        int intentosRestantes = 4;
+
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner s= new Scanner(System.in);
+
+        System.out.println("Bienvenido a la caja fuerte.");
+        
+        // Bucle para los intentos
+        while (intentosRestantes > 0) {
+            // Solicitar al usuario ingresar la combinación
+            System.out.print("Introduzca la combinación de 4 cifras: ");
+            intento = s.nextLine();
+
+            // Verificar si la combinación es correcta
+            if (intento.equals(combinacionCorrecta)) {
+                System.out.println("La caja fuerte se ha abierto satisfactoriamente.");
+                break; // Salir del bucle si la combinación es correcta
+            } else {
+                intentosRestantes--;
+                System.out.println("Lo siento, esa no es la combinación. Intentos restantes: " + intentosRestantes);
+                
+                if (intentosRestantes == 0) {
+                    System.out.println("Se han agotado los intentos. La caja fuerte permanece cerrada.");
+                }
+            }
+        }
+
+
+        s.close();
+    }
+}
