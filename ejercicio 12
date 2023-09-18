@@ -1,0 +1,39 @@
+/******************************************************************************
+
+
+12. Realiza un programa que diga si un número introducido por teclado es par y/o divisible entre 5
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        
+        int numero;
+
+       
+        Scanner s = new Scanner(System.in);
+
+      
+        System.out.print("Ingrese un número entero: ");
+        numero = s.nextInt();
+
+       
+        s.close();
+
+        // Comprobar si el número es par y/o divisible entre 5
+        boolean esPar = (numero % 2 == 0);
+        boolean esDivisibleEntre5 = (numero % 5 == 0);
+
+        // Mostrar los resultados por pantalla
+        if (esPar && esDivisibleEntre5) {
+            System.out.println("El número " + numero + " es par y divisible entre 5.");
+        } else if (esPar) {
+            System.out.println("El número " + numero + " es par pero no es divisible entre 5.");
+        } else if (esDivisibleEntre5) {
+            System.out.println("El número " + numero + " no es par pero es divisible entre 5.");
+        } else {
+            System.out.println("El número " + numero + " no es par y no es divisible entre 5.");
+        }
+    }
+}
