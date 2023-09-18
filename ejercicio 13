@@ -1,0 +1,30 @@
+/******************************************************************************
+
+13. Realiza un programa que nos diga cuántos dígitos tiene un número entero que puede ser
+positivo o negativo. Se permiten números de hasta 5 dígitos
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de variables
+        int numero, cantidadDigitos;
+
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario ingresar un número entero
+        System.out.print("Ingrese un número entero (hasta 5 dígitos): ");
+        numero = scanner.nextInt();
+
+        // Cerrar el objeto Scanner
+        scanner.close();
+
+        // Calcular la cantidad de dígitos utilizando la función Math.abs
+        cantidadDigitos = String.valueOf(Math.abs(numero)).length();
+
+        // Mostrar la cantidad de dígitos por pantalla
+        System.out.println("El número " + numero + " tiene " + cantidadDigitos + " dígitos.");
+    }
+}
