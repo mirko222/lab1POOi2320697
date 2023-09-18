@@ -1,0 +1,71 @@
+/******************************************************************************
+
+14.Realiza un programa que, dado un día de la semana (de lunes a viernes) 
+y una hora (horas y minutos), calcula cuántos minutos faltan para el fin de semana. 
+Se considera que el fin de semana comienza el viernes a las 15:00h. 
+Se da por hecho que el usuario introducirá un día y hora correctos, anterior al viernes a las 15:00h
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de variables
+        String diaSemana;
+        int horas, minutos;
+        
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario ingresar el día de la semana y la hora
+        System.out.print("Ingrese el día de la semana (lunes a viernes): ");
+        diaSemana = scanner.nextLine();
+
+        System.out.print("Ingrese la hora (0-23): ");
+        horas = scanner.nextInt();
+
+        System.out.print("Ingrese los minutos (0-59): ");
+        minutos = scanner.nextInt();
+
+        // Cerrar el objeto Scanner
+        scanner.close();
+
+        // Convertir el día de la semana a un número (lunes=1, martes=2, ..., viernes=5)
+        int diaNumero = 0;
+        switch (diaSemana.toLowerCase()) {
+            case "lunes":
+                diaNumero = 1;
+                break;
+            case "martes":
+                diaNumero = 2;
+                break;
+            case "miércoles":
+                diaNumero = 3;
+                break;
+            case "jueves":
+                diaNumero = 4;
+                break;
+            case "viernes":
+                diaNumero = 5;
+                break;
+            default:
+                System.out.println("Día de la semana inválido.");
+                return;
+        }
+
+        // Calcular los minutos hasta el fin de semana (viernes 15:00h)
+        int minutosHastaFinDeSemana = 0;
+        if (diaNumero < 5) { // Si no es viernes
+            minutosHastaFinDeSemana = ((5 - diaNumero - 1) * 24 + (15 - horas)) * 60 + (60 - minutos);
+        } else if (diaNumero == 5 && horas < 15) { // Si es viernes pero antes de las 15:00h
+            minutosHastaFinDeSemana = (15 - horas) * 60 + (60 - minutos);
+        }
+
+        // Mostrar los minutos por pantalla
+        if (minutosHastaFinDeSemana > 0) {
+            System.out.println("Faltan " + minutosHastaFinDeSemana + " minutos para el fin de semana.");
+        } else {
+            System.out.println("Ya es fin de semana.");
+        }
+    }
+}
