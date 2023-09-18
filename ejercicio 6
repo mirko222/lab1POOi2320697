@@ -1,0 +1,19 @@
+/******************************************************************************
+6.Realiza un programa que convierta valores de Mb a Kb.
+
+*******************************************************************************/
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    double mb;
+	    double kb;
+	    Scanner s = new Scanner(System.in);
+		System.out.println("Escribir la cantidad en (mb): ");
+		mb = s.nextDouble();
+		
+		kb =  mb*1000;
+		s.close();
+		System.out.println(mb + " MB quivale a " + kb + " KB ");
+	}
+}
