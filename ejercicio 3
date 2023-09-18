@@ -1,0 +1,21 @@
+/******************************************************************************
+
+
+3.Realiza un conversor de euros a pesetas. 
+La cantidad en euros que se quiere convertir deberá estar almacenada en una variable
+
+*******************************************************************************/
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de variables
+        double euros = 2002.0; // El monto que queremos convertir
+        double valorConv = 166.386; // 1 euro equivale a 166.386 pesetas
+        
+        // Conversión de euros a pesetas
+        double pesetas = euros * valorConv;
+        
+        // Mostrar el resultado por pantalla
+        System.out.println(euros + " euros equivalen a " + pesetas + " pesetas.");
+    }
+}
+
