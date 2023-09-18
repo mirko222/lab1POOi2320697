@@ -1,0 +1,55 @@
+/******************************************************************************
+
+ 17. Realiza un programa que vaya pidiendo números hasta que se introduzca un número
+ negativo y nos diga cuantos números se han introducido, la media de los pares y 
+ el mayor de los pares. El número negativo sólo se utiliza para indicar el final 
+ de la introducción de datos, pero no se incluye en el cómputo.
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        int numero, cantidadNumeros = 0;
+        int sumaImpares = 0, cantidadImpares = 0;
+        int mayorPar = Integer.MIN_VALUE;
+
+        
+        Scanner s = new Scanner(System.in);
+
+        // Solicitar al usuario ingresar números hasta que se ingrese un número negativo
+        System.out.println("Introduzca números (introduzca un número negativo para finalizar):");
+        
+        while (true) {
+            System.out.print("Ingrese un número: ");
+            numero = s.nextInt();
+
+            if (numero < 0) {
+                break; // Salir del bucle si se ingresa un número negativo
+            }
+
+            cantidadNumeros++;
+
+            if (numero % 2 != 0) { // Si es impar
+                sumaImpares += numero;
+                cantidadImpares++;
+            } else { // Si es par
+                if (numero > mayorPar) {
+                    mayorPar = numero;
+                }
+            }
+        }
+
+        // Cerrar el objeto Scanner
+        s.close();
+
+        // Calcular la media de los números impares
+        double mediaImpares = (cantidadImpares > 0) ? (double) sumaImpares / cantidadImpares : 0;
+
+        // Mostrar los resultados por pantalla
+        System.out.println("Cantidad de números introducidos: " + cantidadNumeros);
+        System.out.println("Media de los números impares: " + mediaImpares);
+        System.out.println("Mayor de los números pares: " + ((mayorPar != Integer.MIN_VALUE) ? mayorPar : "No se introdujeron números pares."));
+    }
+}
