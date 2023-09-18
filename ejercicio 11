@@ -1,0 +1,33 @@
+/******************************************************************************
+
+11. Escribe un programa que dada una hora determinada (horas y minutos), 
+calcula los segundos que faltan para llegar a la medianoche
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de variables
+        int horas, minutos;
+
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario ingresar las horas y minutos
+        System.out.print("Ingrese las horas (0-23): ");
+        horas = scanner.nextInt();
+
+        System.out.print("Ingrese los minutos (0-59): ");
+        minutos = scanner.nextInt();
+
+        // Cerrar el objeto Scanner
+        scanner.close();
+
+        // Calcular los segundos hasta la medianoche
+        int segundosHastaMedianoche = (23 - horas) * 3600 + (59 - minutos) * 60;
+
+        // Mostrar los segundos por pantalla
+        System.out.println("Faltan " + segundosHastaMedianoche + " segundos para llegar a medianoche.");
+    }
+}
