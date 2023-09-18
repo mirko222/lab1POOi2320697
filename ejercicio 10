@@ -1,0 +1,32 @@
+/******************************************************************************
+10.Realiza un programa que calcule el tiempo que tardará en caer un objeto desde una altura h.
+Aplica la fórmula, Aplica la fórmula t=raíz(2h/g) siendo g=9.81
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de variables
+        double altura, tiempo;
+
+        // Aceleración debida a la gravedad
+        double g = 9.81; // m/s^2
+
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner s = new Scanner(System.in);
+
+        // Solicitar al usuario ingresar la altura desde la que cae el objeto
+        System.out.print("Ingrese la altura desde la que cae el objeto (en metros): ");
+        altura = s.nextDouble();
+
+        // Cerrar el objeto Scanner
+        s.close();
+
+        // Calcular el tiempo de caída
+        tiempo =((2 * altura) / g);
+
+        // Mostrar el tiempo de caída por pantalla
+        System.out.println("El objeto tardará aproximadamente " + tiempo + " segundos en caer.");
+    }
+}
