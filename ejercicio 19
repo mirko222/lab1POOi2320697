@@ -1,0 +1,42 @@
+/******************************************************************************
+
+19. Realiza un programa que pinte la letra L por pantalla hecha con asteriscos. El programa pedirá la
+altura. El palo horizontal de la L tendrá una longitud de la mitad (división entera entre 2) de la
+altura más uno.
+
+*******************************************************************************/
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Declaración de variables
+        int altura;
+
+        // Crear un objeto Scanner para la entrada de datos
+        Scanner s = new Scanner(System.in);
+
+        // Solicitar al usuario ingresar la altura
+        System.out.print("Ingrese la altura de la letra L: ");
+        altura = s.nextInt();
+
+        // Cerrar el objeto Scanner
+        s.close();
+
+        // Validar que la altura sea mayor o igual a 2
+        if (altura < 2) {
+            System.out.println("La altura debe ser mayor o igual a 2.");
+        } else {
+            // Dibujar la letra L
+            for (int i = 1; i <= altura; i++) {
+                if (i != altura) {
+                    System.out.println("*");
+                } else {
+                    for (int j = 1; j <= (altura / 2) + 1; j++) {
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+            }
+        }
+    }
+}
